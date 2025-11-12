@@ -8,7 +8,12 @@ const authRoutes = require("./routes/auth.routes");
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://localhost:5173", ""],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 //routes
@@ -16,7 +21,5 @@ app.use("/api/rants", authMiddleware, rantRoutes);
 app.use("/api/comments", authMiddleware, commentRoutes);
 app.use("/api/reports", authMiddleware, reportRoutes);
 app.use("/api/auth", authRoutes);
-
-
 
 module.exports = app;
