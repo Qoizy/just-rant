@@ -1,7 +1,7 @@
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 const { OAuth2Client } = require("google-auth-library");
-const { use } = require("../routes/auth.routes");
+// const { use } = require("../routes/auth.routes");
 
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
